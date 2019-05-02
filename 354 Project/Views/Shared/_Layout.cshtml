@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+     div.c {
+    font-size: 200%;
+    }
+</style>
+   
+    <title class="c">@ViewBag.Title - Lung Life</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="https://code.jquery.com.jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> <!-- KIM added this here and the two below -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/StyleSheet2.css" rel="stylesheet" />
+    <link href="~/StyleSheet3.css" rel="stylesheet" />
+    <link href="~/StyleSheet4.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Lung Life", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div style="float:right" class="navbar-collapse collapse">
+                <ul style="float:right" class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    <li style="float:right" class="dropdown">
+                        <a href="#" style="float:right; font-size: 30px "  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul style="float:right" class="dropdown-menu" role="menu">
+                            <li><a href="#">@Html.ActionLink("Cancer Types", "Index", "CancerTypes")</a></li>
+                            <li><a href="#">@Html.ActionLink("Cancer Symptoms", "Index", "CancerType_Symptom")</a></li>
+                            <li><a href="#">@Html.ActionLink("Symptoms", "Index", "Symptoms")</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">@Html.ActionLink("Treatment Type", "Index", "Treatment_Type")</a></li>
+                            <li><a href="#">@Html.ActionLink("Treatments", "Index", "Treatments")</a></li>
+                            <li><a href="#">@Html.ActionLink("Preventions", "Index", "Preventions")</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">@Html.ActionLink("Resources", "Index", "Resources")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p style="color:white">&copy; @DateTime.Now.Year - Lung Life Development Team</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5b87d999b4b47d98469994ac1dcb42b" Name="Diagram1">
+        <EntityTypeShape EntityType="Lung_LifeModel.Administration" Width="1.5" PointX="8.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.CancerType" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.CancerType_Symptom" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.CancerTypeTreatment" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Journal" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Medical_Aid" Width="1.5" PointX="13.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Prevention" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Resource" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Symptom" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Treatment" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Treatment_Type" Width="1.5" PointX="1.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.User_Access" Width="1.5" PointX="11" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.User_Medication" Width="1.5" PointX="13.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.User_Role" Width="1.5" PointX="8.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lung_LifeModel.Userr" Width="1.5" PointX="11" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="Lung_LifeModel.FK__User_Acce__Admin__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__CancerTyp__Cance__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__CancerTyp__Cance__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__Preventio__Cance__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__Resources__Cance__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__CancerTyp__Sym_I__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__CancerTyp__Treat__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__Userr__Journal_I__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__Medical_A__User___300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__Treatment__Treat__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__User_Acce__User___145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="Lung_LifeModel.FK__User_Medi__User___2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Lung_LifeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administration">
+    <Key>
+      <PropertyRef Name="Admin_ID" />
+    </Key>
+    <Property Name="Admin_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Admin_Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Admin_Image" Type="image" />
+  </EntityType>
+  <EntityType Name="CancerType">
+    <Key>
+      <PropertyRef Name="CancerType_ID" />
+    </Key>
+    <Property Name="CancerType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CancerType_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="CancerType_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CancerType_Image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="CancerType_Symptom">
+    <Key>
+      <PropertyRef Name="Cancer_Sym_ID" />
+    </Key>
+    <Property Name="Cancer_Sym_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CancerType_ID" Type="int" Nullable="false" />
+    <Property Name="Sym_ID" Type="int" Nullable="false" />
+    <Property Name="Cancer_Sym_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Cancer_Sym_Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CancerTypeTreatment">
+    <Key>
+      <PropertyRef Name="Cancer_Treat_ID" />
+    </Key>
+    <Property Name="Cancer_Treat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Treat_Type_ID" Type="int" Nullable="false" />
+    <Property Name="CancerType_ID" Type="int" Nullable="false" />
+    <Property Name="Cancer_Treat_Image" Type="image" />
+    <Property Name="Treat_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="Journal_ID" />
+    </Key>
+    <Property Name="Journal_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Journal_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Journal_Date" Type="datetime" Nullable="false" />
+    <Property Name="Journal_Entry" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medical_Aid">
+    <Key>
+      <PropertyRef Name="Med_Aid_ID" />
+    </Key>
+    <Property Name="Med_Aid_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_IDs" Type="int" Nullable="false" />
+    <Property Name="Med_Aid_Num" Type="int" Nullable="false" />
+    <Property Name="Member_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Member_IDNum" Type="int" Nullable="false" />
+    <Property Name="MainMember_IDNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prevention">
+    <Key>
+      <PropertyRef Name="Prev_ID" />
+    </Key>
+    <Property Name="Prev_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CancerType_ID" Type="int" Nullable="false" />
+    <Property Name="Prev_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Prev_Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="Res_ID" />
+    </Key>
+    <Property Name="Res_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CancerType_ID" Type="int" Nullable="false" />
+    <Property Name="Res_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Res_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Res_Link" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Res_Image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Symptom">
+    <Key>
+      <PropertyRef Name="Sym_ID" />
+    </Key>
+    <Property Name="Sym_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sym_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Sym_Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Treatment">
+    <Key>
+      <PropertyRef Name="Treat_ID" />
+    </Key>
+    <Property Name="Treat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Treat_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Treat_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Treat_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Treat_Image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Treatment_Type">
+    <Key>
+      <PropertyRef Name="Treat_Type_ID" />
+    </Key>
+    <Property Name="Treat_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Treat_Type_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Treat_Type_Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Access">
+    <Key>
+      <PropertyRef Name="User_Access_ID" />
+    </Key>
+    <Property Name="User_Access_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_ID" Type="int" Nullable="false" />
+    <Property Name="User_Role_ID" Type="int" Nullable="false" />
+    <Property Name="User_IDs" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Medication">
+    <Key>
+      <PropertyRef Name="User_Med_ID" />
+    </Key>
+    <Property Name="User_Med_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Med_Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="User_Med_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_IDs" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Role">
+    <Key>
+      <PropertyRef Name="User_Role_ID" />
+    </Key>
+    <Property Name="User_Role_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Role_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="User_Role_Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Userr">
+    <Key>
+      <PropertyRef Name="User_IDs" />
+    </Key>
+    <Property Name="User_IDs" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Names" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="User_Surname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="User_Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="User_Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="User_Age" Type="int" Nullable="false" />
+    <Property Name="User_Image" Type="image" />
+    <Property Name="User_Username" Type="nvarchar" MaxLength="20" />
+    <Property Name="User_Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="Journal_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__CancerTyp__Cance__24927208">
+    <End Role="CancerType" Type="Self.CancerType" Multiplicity="1" />
+    <End Role="CancerTypeTreatment" Type="Self.CancerTypeTreatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CancerType">
+        <PropertyRef Name="CancerType_ID" />
+      </Principal>
+      <Dependent Role="CancerTypeTreatment">
+        <PropertyRef Name="CancerType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CancerTyp__Cance__35BCFE0A">
+    <End Role="CancerType" Type="Self.CancerType" Multiplicity="1" />
+    <End Role="CancerType_Symptom" Type="Self.CancerType_Symptom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CancerType">
+        <PropertyRef Name="CancerType_ID" />
+      </Principal>
+      <Dependent Role="CancerType_Symptom">
+        <PropertyRef Name="CancerType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CancerTyp__Sym_I__34C8D9D1">
+    <End Role="Symptom" Type="Self.Symptom" Multiplicity="1" />
+    <End Role="CancerType_Symptom" Type="Self.CancerType_Symptom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Symptom">
+        <PropertyRef Name="Sym_ID" />
+      </Principal>
+      <Dependent Role="CancerType_Symptom">
+        <PropertyRef Name="Sym_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CancerTyp__Treat__25869641">
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="1" />
+    <End Role="CancerTypeTreatment" Type="Self.CancerTypeTreatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treatment">
+        <PropertyRef Name="Treat_ID" />
+      </Principal>
+      <Dependent Role="CancerTypeTreatment">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Medical_A__User___300424B4">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="1" />
+    <End Role="Medical_Aid" Type="Self.Medical_Aid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="User_IDs" />
+      </Principal>
+      <Dependent Role="Medical_Aid">
+        <PropertyRef Name="User_IDs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Preventio__Cance__1A14E395">
+    <End Role="CancerType" Type="Self.CancerType" Multiplicity="1" />
+    <End Role="Prevention" Type="Self.Prevention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CancerType">
+        <PropertyRef Name="CancerType_ID" />
+      </Principal>
+      <Dependent Role="Prevention">
+        <PropertyRef Name="CancerType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resources__Cance__1CF15040">
+    <End Role="CancerType" Type="Self.CancerType" Multiplicity="1" />
+    <End Role="Resources" Type="Self.Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CancerType">
+        <PropertyRef Name="CancerType_ID" />
+      </Principal>
+      <Dependent Role="Resources">
+        <PropertyRef Name="CancerType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Treatment__Treat__21B6055D">
+    <End Role="Treatment_Type" Type="Self.Treatment_Type" Multiplicity="1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treatment_Type">
+        <PropertyRef Name="Treat_Type_ID" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="Treat_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Acce__Admin__15502E78">
+    <End Role="Administration" Type="Self.Administration" Multiplicity="1" />
+    <End Role="User_Access" Type="Self.User_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administration">
+        <PropertyRef Name="Admin_ID" />
+      </Principal>
+      <Dependent Role="User_Access">
+        <PropertyRef Name="Admin_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Acce__User___145C0A3F">
+    <End Role="User_Role" Type="Self.User_Role" Multiplicity="1" />
+    <End Role="User_Access" Type="Self.User_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Role">
+        <PropertyRef Name="User_Role_ID" />
+      </Principal>
+      <Dependent Role="User_Access">
+        <PropertyRef Name="User_Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Medi__User___2D27B809">
+    <End Role="Userr" Type="Self.Userr" Multiplicity="1" />
+    <End Role="User_Medication" Type="Self.User_Medication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userr">
+        <PropertyRef Name="User_IDs" />
+      </Principal>
+      <Dependent Role="User_Medication">
+        <PropertyRef Name="User_IDs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Userr__Journal_I__2A4B4B5E">
+    <End Role="Journal" Type="Self.Journal" Multiplicity="1" />
+    <End Role="Userr" Type="Self.Userr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Journal">
+        <PropertyRef Name="Journal_ID" />
+      </Principal>
+      <Dependent Role="Userr">
+        <PropertyRef Name="Journal_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Lung_LifeModelStoreContainer">
+    <EntitySet Name="Administration" EntityType="Self.Administration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CancerType" EntityType="Self.CancerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CancerType_Symptom" EntityType="Self.CancerType_Symptom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CancerTypeTreatment" EntityType="Self.CancerTypeTreatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Journal" EntityType="Self.Journal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medical_Aid" EntityType="Self.Medical_Aid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prevention" EntityType="Self.Prevention" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Symptom" EntityType="Self.Symptom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treatment" EntityType="Self.Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treatment_Type" EntityType="Self.Treatment_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Access" EntityType="Self.User_Access" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Medication" EntityType="Self.User_Medication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Role" EntityType="Self.User_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Userr" EntityType="Self.Userr" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CancerTyp__Cance__24927208" Association="Self.FK__CancerTyp__Cance__24927208">
+      <End Role="CancerType" EntitySet="CancerType" />
+      <End Role="CancerTypeTreatment" EntitySet="CancerTypeTreatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CancerTyp__Cance__35BCFE0A" Association="Self.FK__CancerTyp__Cance__35BCFE0A">
+      <End Role="CancerType" EntitySet="CancerType" />
+      <End Role="CancerType_Symptom" EntitySet="CancerType_Symptom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CancerTyp__Sym_I__34C8D9D1" Association="Self.FK__CancerTyp__Sym_I__34C8D9D1">
+      <End Role="Symptom" EntitySet="Symptom" />
+      <End Role="CancerType_Symptom" EntitySet="CancerType_Symptom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CancerTyp__Treat__25869641" Association="Self.FK__CancerTyp__Treat__25869641">
+      <End Role="Treatment" EntitySet="Treatment" />
+      <End Role="CancerTypeTreatment" EntitySet="CancerTypeTreatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Medical_A__User___300424B4" Association="Self.FK__Medical_A__User___300424B4">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="Medical_Aid" EntitySet="Medical_Aid" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Preventio__Cance__1A14E395" Association="Self.FK__Preventio__Cance__1A14E395">
+      <End Role="CancerType" EntitySet="CancerType" />
+      <End Role="Prevention" EntitySet="Prevention" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resources__Cance__1CF15040" Association="Self.FK__Resources__Cance__1CF15040">
+      <End Role="CancerType" EntitySet="CancerType" />
+      <End Role="Resources" EntitySet="Resources" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Treatment__Treat__21B6055D" Association="Self.FK__Treatment__Treat__21B6055D">
+      <End Role="Treatment_Type" EntitySet="Treatment_Type" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Acce__Admin__15502E78" Association="Self.FK__User_Acce__Admin__15502E78">
+      <End Role="Administration" EntitySet="Administration" />
+      <End Role="User_Access" EntitySet="User_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Acce__User___145C0A3F" Association="Self.FK__User_Acce__User___145C0A3F">
+      <End Role="User_Role" EntitySet="User_Role" />
+      <End Role="User_Access" EntitySet="User_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Medi__User___2D27B809" Association="Self.FK__User_Medi__User___2D27B809">
+      <End Role="Userr" EntitySet="Userr" />
+      <End Role="User_Medication" EntitySet="User_Medication" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Userr__Journal_I__2A4B4B5E" Association="Self.FK__Userr__Journal_I__2A4B4B5E">
+      <End Role="Journal" EntitySet="Journal" />
+      <End Role="Userr" EntitySet="Userr" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_354_Project.Models.Treatment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Treatment</h3>
+    </div>
+
+    <div class="newButton">
+        @* Potentially kim? *@
+        <i class="fas fa-plus"></i>
+        @Html.ActionLink("Create New", "Create", null, new { @style = "color: # fff" })
+    </div>
+    <br/>
+    <br/>
+    <div class="Search">
+        <i class="newButton bsearch">
+            @Html.ActionLink("Search", "Search", new { @style = "color: rgb(255,87,51)" })
+        </i></div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>
+                Treatment Type
+            </th>
+            <th>
+                Treatment Name
+            </th>
+            <th>
+                Treatment Description
+            </th>
+            <th>
+                Treatment Imagine
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Treatment_Type.Treat_Type_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Treat_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Treat_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Treat_Image)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Treat_ID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Treat_ID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Treat_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

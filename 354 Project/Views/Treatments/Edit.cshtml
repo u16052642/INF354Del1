@@ -1,0 +1,70 @@
+﻿@model _354_Project.Models.Treatment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Treatment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Treat_ID)
+
+        @*<div class="form-group">
+            
+            <div class="col-md-10">
+                <h5><span style="font-weight:bold">Treatment Type Symptom:<span class="label label-default"></span></span></h5>
+                @Html.EditorFor(model => model.Treat_Type_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Treat_Type_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            
+            <div class="col-md-10">
+                <h5><span style="font-weight:bold">Treatment:<span class="label label-default"></span></span></h5>
+                @Html.EditorFor(model => model.Treat_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Treat_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="col-md-10">
+                <h5><span style="font-weight:bold">Treatment Description:<span class="label label-default"></span></span></h5>
+                @Html.EditorFor(model => model.Treat_Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Treat_Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            
+            <div class="col-md-10">
+                <h5><span style="font-weight:bold">Image:<span class="label label-default"></span></span></h5>
+                @Html.EditorFor(model => model.Treat_Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Treat_Image, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-9 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

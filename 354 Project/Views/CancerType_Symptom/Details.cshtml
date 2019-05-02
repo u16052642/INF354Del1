@@ -1,0 +1,50 @@
+﻿@model _354_Project.Models.CancerType_Symptom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CancerType_Symptom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancer_Sym_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cancer_Sym_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancer_Sym_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cancer_Sym_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Symptom.Sym_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symptom.Sym_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CancerType.CancerType_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CancerType.CancerType_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cancer_Sym_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

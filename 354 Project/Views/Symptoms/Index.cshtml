@@ -1,0 +1,47 @@
+﻿@model IEnumerable<_354_Project.Models.Symptom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Symptom</h3>
+    </div>
+
+    <div class="newButton">
+        @* Potentially kim? *@
+        <i class="fas fa-plus"></i>
+        @Html.ActionLink("Create New", "Create", null, new { @style = "color: # fff" })
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>
+                Symptom Name
+            </th>
+            <th>
+                Symptom Description
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sym_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sym_Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Sym_ID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Sym_ID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Sym_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

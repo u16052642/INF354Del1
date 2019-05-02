@@ -1,0 +1,59 @@
+﻿@model IEnumerable<_354_Project.Models.CancerType_Symptom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Cancer Type Symptom</h3>
+    </div>
+
+    <div class="newButton">
+        @* Potentially kim? *@
+        <i class="fas fa-plus"></i>
+        @Html.ActionLink("Create New", "Create", null, new { @style = "color: # fff" })
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>
+                Cancer Symptom
+            </th>
+            <th>
+                Symptom Description
+            </th>
+            <th>
+                Symptom Name
+            </th>
+            <th>
+                Cancer Type
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cancer_Sym_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cancer_Sym_Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Symptom.Sym_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CancerType.CancerType_Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Cancer_Sym_ID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.Cancer_Sym_ID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Cancer_Sym_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

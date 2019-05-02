@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Lung_LifeModelStoreContainer" CdmEntityContainer="Lung_LifeEntities2">
+    <EntitySetMapping Name="Administrations">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Administration">
+        <MappingFragment StoreEntitySet="Administration">
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Image" ColumnName="Admin_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancerTypes">
+      <EntityTypeMapping TypeName="Lung_LifeModel.CancerType">
+        <MappingFragment StoreEntitySet="CancerType">
+          <ScalarProperty Name="CancerType_ID" ColumnName="CancerType_ID" />
+          <ScalarProperty Name="CancerType_Name" ColumnName="CancerType_Name" />
+          <ScalarProperty Name="CancerType_Description" ColumnName="CancerType_Description" />
+          <ScalarProperty Name="CancerType_Image" ColumnName="CancerType_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancerType_Symptom">
+      <EntityTypeMapping TypeName="Lung_LifeModel.CancerType_Symptom">
+        <MappingFragment StoreEntitySet="CancerType_Symptom">
+          <ScalarProperty Name="Cancer_Sym_ID" ColumnName="Cancer_Sym_ID" />
+          <ScalarProperty Name="CancerType_ID" ColumnName="CancerType_ID" />
+          <ScalarProperty Name="Sym_ID" ColumnName="Sym_ID" />
+          <ScalarProperty Name="Cancer_Sym_Name" ColumnName="Cancer_Sym_Name" />
+          <ScalarProperty Name="Cancer_Sym_Description" ColumnName="Cancer_Sym_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancerTypeTreatments">
+      <EntityTypeMapping TypeName="Lung_LifeModel.CancerTypeTreatment">
+        <MappingFragment StoreEntitySet="CancerTypeTreatment">
+          <ScalarProperty Name="Cancer_Treat_ID" ColumnName="Cancer_Treat_ID" />
+          <ScalarProperty Name="Treat_Type_ID" ColumnName="Treat_Type_ID" />
+          <ScalarProperty Name="CancerType_ID" ColumnName="CancerType_ID" />
+          <ScalarProperty Name="Cancer_Treat_Image" ColumnName="Cancer_Treat_Image" />
+          <ScalarProperty Name="Treat_ID" ColumnName="Treat_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journals">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Journal">
+        <MappingFragment StoreEntitySet="Journal">
+          <ScalarProperty Name="Journal_ID" ColumnName="Journal_ID" />
+          <ScalarProperty Name="Journal_Name" ColumnName="Journal_Name" />
+          <ScalarProperty Name="Journal_Date" ColumnName="Journal_Date" />
+          <ScalarProperty Name="Journal_Entry" ColumnName="Journal_Entry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medical_Aid">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Medical_Aid">
+        <MappingFragment StoreEntitySet="Medical_Aid">
+          <ScalarProperty Name="Med_Aid_ID" ColumnName="Med_Aid_ID" />
+          <ScalarProperty Name="User_IDs" ColumnName="User_IDs" />
+          <ScalarProperty Name="Med_Aid_Num" ColumnName="Med_Aid_Num" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Member_IDNum" ColumnName="Member_IDNum" />
+          <ScalarProperty Name="MainMember_IDNum" ColumnName="MainMember_IDNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preventions">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Prevention">
+        <MappingFragment StoreEntitySet="Prevention">
+          <ScalarProperty Name="Prev_ID" ColumnName="Prev_ID" />
+          <ScalarProperty Name="CancerType_ID" ColumnName="CancerType_ID" />
+          <ScalarProperty Name="Prev_Name" ColumnName="Prev_Name" />
+          <ScalarProperty Name="Prev_Description" ColumnName="Prev_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Resource">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="Res_ID" ColumnName="Res_ID" />
+          <ScalarProperty Name="CancerType_ID" ColumnName="CancerType_ID" />
+          <ScalarProperty Name="Res_Name" ColumnName="Res_Name" />
+          <ScalarProperty Name="Res_Description" ColumnName="Res_Description" />
+          <ScalarProperty Name="Res_Link" ColumnName="Res_Link" />
+          <ScalarProperty Name="Res_Image" ColumnName="Res_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Symptoms">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Symptom">
+        <MappingFragment StoreEntitySet="Symptom">
+          <ScalarProperty Name="Sym_ID" ColumnName="Sym_ID" />
+          <ScalarProperty Name="Sym_Name" ColumnName="Sym_Name" />
+          <ScalarProperty Name="Sym_Description" ColumnName="Sym_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treatments">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Treatment">
+        <MappingFragment StoreEntitySet="Treatment">
+          <ScalarProperty Name="Treat_ID" ColumnName="Treat_ID" />
+          <ScalarProperty Name="Treat_Type_ID" ColumnName="Treat_Type_ID" />
+          <ScalarProperty Name="Treat_Name" ColumnName="Treat_Name" />
+          <ScalarProperty Name="Treat_Description" ColumnName="Treat_Description" />
+          <ScalarProperty Name="Treat_Image" ColumnName="Treat_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treatment_Type">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Treatment_Type">
+        <MappingFragment StoreEntitySet="Treatment_Type">
+          <ScalarProperty Name="Treat_Type_ID" ColumnName="Treat_Type_ID" />
+          <ScalarProperty Name="Treat_Type_Name" ColumnName="Treat_Type_Name" />
+          <ScalarProperty Name="Treat_Type_Description" ColumnName="Treat_Type_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Access">
+      <EntityTypeMapping TypeName="Lung_LifeModel.User_Access">
+        <MappingFragment StoreEntitySet="User_Access">
+          <ScalarProperty Name="User_Access_ID" ColumnName="User_Access_ID" />
+          <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+          <ScalarProperty Name="User_Role_ID" ColumnName="User_Role_ID" />
+          <ScalarProperty Name="User_IDs" ColumnName="User_IDs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Medication">
+      <EntityTypeMapping TypeName="Lung_LifeModel.User_Medication">
+        <MappingFragment StoreEntitySet="User_Medication">
+          <ScalarProperty Name="User_Med_ID" ColumnName="User_Med_ID" />
+          <ScalarProperty Name="User_Med_Name" ColumnName="User_Med_Name" />
+          <ScalarProperty Name="User_Med_Description" ColumnName="User_Med_Description" />
+          <ScalarProperty Name="User_IDs" ColumnName="User_IDs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Role">
+      <EntityTypeMapping TypeName="Lung_LifeModel.User_Role">
+        <MappingFragment StoreEntitySet="User_Role">
+          <ScalarProperty Name="User_Role_ID" ColumnName="User_Role_ID" />
+          <ScalarProperty Name="User_Role_Name" ColumnName="User_Role_Name" />
+          <ScalarProperty Name="User_Role_Description" ColumnName="User_Role_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userrs">
+      <EntityTypeMapping TypeName="Lung_LifeModel.Userr">
+        <MappingFragment StoreEntitySet="Userr">
+          <ScalarProperty Name="User_IDs" ColumnName="User_IDs" />
+          <ScalarProperty Name="User_Names" ColumnName="User_Names" />
+          <ScalarProperty Name="User_Surname" ColumnName="User_Surname" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="User_Gender" ColumnName="User_Gender" />
+          <ScalarProperty Name="User_Age" ColumnName="User_Age" />
+          <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+          <ScalarProperty Name="User_Username" ColumnName="User_Username" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="Journal_ID" ColumnName="Journal_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

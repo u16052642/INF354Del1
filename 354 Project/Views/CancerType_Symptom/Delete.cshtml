@@ -1,0 +1,56 @@
+﻿@model _354_Project.Models.CancerType_Symptom
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CancerType_Symptom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancer_Sym_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cancer_Sym_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancer_Sym_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cancer_Sym_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Symptom.Sym_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symptom.Sym_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CancerType.CancerType_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CancerType.CancerType_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
